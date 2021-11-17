@@ -73,9 +73,16 @@ echo "&lt;h1&gt;Hello $name&lt;/h1&gt;";
 					$this->open('database.db');
 				}
 			}
-			$sql = "";
 			$db = new Database();
 			$exec = $db->exec($sql);
+			$sql = "SELECT * FROM user";
+			$result = $db->query($sql);
+			while ($row = $result->fetchArray()) {
+				echo "ID: " . $row[0] . "<br>";
+				echo "Name: " . $row[1] . "<br>";
+				echo "Age: " . $row[2] . "<br>";
+				echo "<br>";
+			}
 			if (!$db) {
 				echo $db->lastErrorMsg();
 			} else {
