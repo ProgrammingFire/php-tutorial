@@ -75,7 +75,7 @@ echo "&lt;h1&gt;Hello $name&lt;/h1&gt;";
 			}
 			$db = new Database();
 			$exec = $db->exec($sql);
-			$sql = "SELECT * FROM user";
+			$sql = "";
 			$result = $db->query($sql);
 			while ($row = $result->fetchArray()) {
 				echo "ID: " . $row[0] . "<br>";
